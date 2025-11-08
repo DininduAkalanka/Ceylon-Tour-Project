@@ -1,0 +1,718 @@
+/* Professional Contact Section - Ceylon Tour.com - Enhanced Override */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,300&display=swap");
+
+:root {
+  --primary-color: #2c5530;
+  --secondary-color: #4a7c59;
+  --accent-color: #ff6b35;
+  --light-green: #e8f5e8;
+  --dark-text: #333;
+  --light-text: #666;
+  --white: #ffffff;
+  --shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  --border-radius: 1rem;
+}
+
+/* Override original contact form styles from style.css */
+.contact-form {
+    display: block !important;
+    flex-direction: column !important;
+}
+
+section.contact {
+    background: linear-gradient(135deg, var(--white) 0%, var(--light-green) 50%, var(--white) 100%) !important;
+    padding: 8rem 9% 6rem !important;
+    position: relative;
+    overflow: hidden;
+    font-family: "Poppins", sans-serif !important;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(44, 85, 48, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 107, 53, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 40% 80%, rgba(74, 124, 89, 0.03) 0%, transparent 50%);
+    z-index: 1;
+}
+
+.contact-container {
+    max-width: 120rem;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 6rem;
+    animation: slideInDown 0.8s ease-out;
+}
+
+.contact-title {
+    font-size: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    position: relative;
+}
+
+.contact-title::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8rem;
+    height: 0.4rem;
+    background: var(--accent-color);
+    border-radius: 0.2rem;
+}
+
+.contact-subtitle {
+    font-size: 1.8rem;
+    color: var(--light-text);
+    max-width: 70rem;
+    margin: 0 auto;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 6rem;
+    align-items: start;
+}
+
+/* Contact Information Cards */
+.contact-info {
+    display: grid;
+    gap: 3rem;
+}
+
+.info-card {
+    background: var(--white);
+    padding: 3rem 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.info-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 107, 53, 0.03), transparent);
+    transition: left 0.5s ease;
+}
+
+.info-card:hover::before {
+    left: 100%;
+}
+
+.info-card:hover {
+    transform: translateY(-0.5rem);
+    box-shadow: 0 2rem 4rem rgba(44, 85, 48, 0.15);
+    border-left-color: var(--accent-color);
+}
+
+.info-icon {
+    width: 7rem;
+    height: 7rem;
+    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 2.5rem;
+    flex-shrink: 0;
+    position: relative;
+    box-shadow: 0 0.8rem 2rem rgba(255, 107, 53, 0.3);
+    transition: all 0.3s ease;
+}
+
+.info-icon::after {
+    content: '';
+    position: absolute;
+    inset: -0.3rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.info-card:hover .info-icon::after {
+    opacity: 0.2;
+}
+
+.info-icon i {
+    font-size: 2.4rem;
+    color: var(--white);
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover .info-icon i {
+    transform: scale(1.1);
+}
+
+.info-details h3 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.info-details p {
+    font-size: 1.5rem;
+    color: var(--light-text);
+    line-height: 1.7;
+}
+
+.info-details a {
+    color: var(--secondary-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.info-details a:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* Contact Form - Matching Booking Style */
+.contact-form-wrapper {
+    background: var(--light-green);
+    padding: 4rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    position: relative;
+    width: 100%;
+    animation: slideInUp 0.8s ease-out 0.3s both;
+}
+
+.contact-form-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0.5rem;
+    background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.form-header h2 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.form-header p {
+    font-size: 1.6rem;
+    color: var(--light-text);
+    line-height: 1.7;
+}
+
+.modern-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+}
+
+.modern-contact-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    font-size: 1.6rem;
+    color: var(--dark-text);
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.form-group label i {
+    color: var(--accent-color);
+    font-size: 1.8rem;
+}
+
+section.contact .form-group input,
+section.contact .form-group select,
+section.contact .form-group textarea {
+    padding: 1.5rem !important;
+    font-size: 1.6rem !important;
+    border: 2px solid #ddd !important;
+    border-radius: 0.8rem !important;
+    background: var(--white) !important;
+    color: var(--dark-text) !important;
+    transition: all 0.3s ease !important;
+    font-family: "Poppins", sans-serif !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1);
+    transform: translateY(-0.1rem);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 12rem;
+    line-height: 1.7;
+}
+
+.form-group select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="%23ff6b35" d="M2 0L0 2h4zm0 5L0 3h4z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 1.5rem center;
+    background-size: 1.2rem;
+    padding-right: 4rem;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    margin: 2rem 0;
+    gap: 1.2rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 2rem;
+    height: 2rem;
+    margin: 0;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+    accent-color: var(--accent-color);
+}
+
+.checkbox-label {
+    font-size: 1.4rem;
+    color: var(--light-text);
+    cursor: pointer;
+    line-height: 1.6;
+    flex: 1;
+}
+
+.modern-submit-btn {
+    background: var(--accent-color);
+    color: var(--white);
+    border: none;
+    padding: 1.8rem 4rem;
+    font-size: 1.8rem;
+    border-radius: 5rem;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    width: 100%;
+    margin-top: 2rem;
+    position: relative;
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+    box-shadow: 0 0.8rem 2rem rgba(255, 107, 53, 0.3);
+}
+
+.modern-submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.6s ease;
+}
+
+.modern-submit-btn:hover::before {
+    left: 100%;
+}
+
+.modern-submit-btn:hover {
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1.5rem 3rem rgba(255, 107, 53, 0.4);
+    background: linear-gradient(135deg, var(--accent-color), #e55a2b);
+}
+
+.modern-submit-btn i {
+    font-size: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.modern-submit-btn:hover i {
+    transform: translateX(0.5rem);
+}
+
+/* Responsive Design - Mobile First Approach */
+@media (max-width: 1200px) {
+    .contact {
+        padding: 6rem 7% 5rem;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+    
+    .contact-form-wrapper {
+        padding: 3.5rem 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact {
+        padding: 5rem 5% 4rem;
+    }
+    
+    .contact-title {
+        font-size: 3.2rem;
+    }
+    
+    .contact-subtitle {
+        font-size: 1.6rem;
+    }
+    
+    .modern-contact-form .form-row {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .info-card {
+        padding: 2.5rem 2rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .info-icon {
+        margin-right: 0;
+        margin-bottom: 2rem;
+        width: 8rem;
+        height: 8rem;
+    }
+    
+    .info-icon i {
+        font-size: 2.8rem;
+    }
+    
+    .contact-form-wrapper {
+        padding: 3rem 2.5rem;
+    }
+    
+    .form-header h2 {
+        font-size: 2.6rem;
+    }
+    
+    .form-header p {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        font-size: 55%;
+    }
+    
+    .contact {
+        padding: 4rem 3% 3rem;
+    }
+    
+    .contact-header {
+        margin-bottom: 4rem;
+    }
+    
+    .contact-title {
+        font-size: 3rem;
+    }
+    
+    .contact-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .contact-content {
+        gap: 3rem;
+    }
+    
+    .contact-form-wrapper {
+        padding: 2.5rem 2rem;
+    }
+    
+    .form-header h2 {
+        font-size: 2.4rem;
+    }
+    
+    .modern-submit-btn {
+        padding: 2rem 3rem;
+        font-size: 1.6rem;
+    }
+    
+    .info-card {
+        padding: 2rem 1.5rem;
+    }
+    
+    .info-details h3 {
+        font-size: 1.8rem;
+    }
+    
+    .info-details p {
+        font-size: 1.4rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        padding: 1.8rem 1.5rem;
+        font-size: 1.6rem;
+    }
+}
+
+/* Form Staggered Animations */
+.info-card:nth-child(1) { animation: slideInUp 0.6s ease-out 0.1s both; }
+.info-card:nth-child(2) { animation: slideInUp 0.6s ease-out 0.2s both; }
+.info-card:nth-child(3) { animation: slideInUp 0.6s ease-out 0.3s both; }
+.info-card:nth-child(4) { animation: slideInUp 0.6s ease-out 0.4s both; }
+
+/* Input Placeholder & Focus Styles */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: var(--light-text);
+    font-size: 1.4rem;
+    opacity: 0.7;
+}
+
+.form-group input:focus-visible,
+.form-group select:focus-visible,
+.form-group textarea:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Enhanced Checkbox Styling */
+.checkbox-group input[type="checkbox"] {
+    border-radius: 0.4rem;
+}
+
+.checkbox-group input[type="checkbox"]:focus {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Professional Loading State */
+.modern-submit-btn:disabled {
+    background: var(--light-text);
+    cursor: not-allowed;
+    transform: none;
+}
+
+.modern-submit-btn:disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Better Select Arrow */
+.form-group select {
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff6b35"><path d="M7 10l5 5 5-5z"/></svg>');
+}
+
+/* Form Validation & Error Styles */
+.required {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.error-message {
+  color: var(--accent-color);
+  font-size: 1.3rem;
+  margin-top: 0.5rem;
+  display: none;
+  font-weight: 500;
+}
+
+.error-message.show {
+  display: block;
+  animation: fadeInUp 0.3s ease;
+}
+
+.form-help {
+  font-size: 1.3rem;
+  color: var(--light-text);
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+.form-group input:invalid:not(:placeholder-shown),
+.form-group textarea:invalid:not(:placeholder-shown),
+.form-group select:invalid {
+  border-color: var(--accent-color);
+  background-color: rgba(255, 107, 53, 0.05);
+}
+
+.form-group input:valid:not(:placeholder-shown),
+.form-group textarea:valid:not(:placeholder-shown),
+.form-group select:valid {
+  border-color: var(--secondary-color);
+  background-color: rgba(74, 124, 89, 0.05);
+}
+
+/* Success/Error Messages */
+.form-message {
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    border-left: 0.5rem solid;
+}
+
+.form-message.success {
+    background: rgba(74, 124, 89, 0.1);
+    color: var(--secondary-color);
+    border-left-color: var(--secondary-color);
+}
+
+.form-message.error {
+    background: rgba(255, 107, 53, 0.1);
+    color: var(--accent-color);
+    border-left-color: var(--accent-color);
+}
+
+/* Animations */
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Strong overrides for existing style.css contact form styles */
+section#contact .input-fields,
+section#contact .msg {
+    width: 100% !important;
+    display: block !important;
+}
+
+section#contact .input-fields .input,
+section#contact .msg textarea {
+    margin: 1rem 0 !important;
+    background: var(--white) !important;
+    border: 2px solid #ddd !important;
+    border-bottom: 2px solid #ddd !important;
+    border-radius: 0.8rem !important;
+    padding: 1.5rem !important;
+    color: var(--dark-text) !important;
+    width: 100% !important;
+    font-family: "Poppins", sans-serif !important;
+    font-size: 1.6rem !important;
+    transition: all 0.3s ease !important;
+}
+
+section#contact .input-fields .input:focus,
+section#contact .msg textarea:focus {
+    outline: none !important;
+    border-color: var(--accent-color) !important;
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.1) !important;
+    transform: translateY(-0.1rem) !important;
+}
+
+section#contact .msg textarea {
+    height: 12rem !important;
+    resize: vertical !important;
+    line-height: 1.7 !important;
+}
+
+section#contact .msg .btn1 {
+    margin-top: 2rem !important;
+    display: inline-block !important;
+    border: none !important;
+    color: var(--white) !important;
+    cursor: pointer !important;
+    font-size: 1.8rem !important;
+    padding: 1.5rem 4rem !important;
+    border-radius: 5rem !important;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%) !important;
+    font-family: "Poppins", sans-serif !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+    box-shadow: var(--shadow) !important;
+}
+
+section#contact .msg .btn1:hover {
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%) !important;
+    transform: translateY(-0.3rem) !important;
+    box-shadow: 0 1rem 2rem rgba(44, 85, 48, 0.3) !important;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

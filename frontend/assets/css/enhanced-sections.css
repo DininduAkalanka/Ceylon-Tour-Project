@@ -1,0 +1,583 @@
+/* Enhanced Sections CSS - Professional Tour Website Improvements */
+/* Using existing color scheme and design patterns from booking-style.css */
+
+:root {
+  --primary-color: #2c5530;
+  --secondary-color: #4a7c59;
+  --accent-color: #ff6b35;
+  --light-green: #e8f5e8;
+  --dark-text: #333;
+  --light-text: #666;
+  --white: #ffffff;
+  --shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  --border-radius: 1rem;
+}
+
+/* ============================================
+   TESTIMONIALS SECTION 
+   ============================================ */
+.testimonials {
+  background: var(--light-green);
+  padding: 8rem 9% 6rem;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  visibility: visible;
+}
+
+.testimonials::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent-color);
+}
+
+.testimonials .heading {
+  color: var(--primary-color);
+  margin-bottom: 4rem;
+  position: relative;
+  font-weight: 700;
+}
+
+.testimonials .heading::after {
+  content: '';
+  position: absolute;
+  bottom: -1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 8rem;
+  height: 0.4rem;
+  background: var(--accent-color);
+  border-radius: 0.2rem;
+}
+
+/* Swiper Container Styling */
+.testimonials-swiper {
+  width: 100%;
+  padding: 2rem 0 5rem;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonials-swiper .swiper-wrapper {
+  align-items: stretch;
+  display: flex;
+}
+
+.testimonials-swiper .swiper-slide {
+  height: auto;
+  display: flex;
+  flex-shrink: 0;
+  width: 100%;
+}
+
+.testimonials-swiper .swiper-slide .testimonial-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Fallback for when Swiper isn't initialized */
+.testimonials-swiper:not(.swiper-initialized) .swiper-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+  gap: 3rem;
+}
+
+.testimonials-swiper:not(.swiper-initialized) .swiper-slide {
+  width: auto;
+}
+
+/* Swiper Navigation Styling */
+.testimonials-swiper .swiper-button-next,
+.testimonials-swiper .swiper-button-prev {
+  color: var(--primary-color);
+  background: var(--white);
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  margin-top: -2rem;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.testimonials-swiper .swiper-button-next:hover,
+.testimonials-swiper .swiper-button-prev:hover {
+  background: var(--primary-color);
+  color: var(--white);
+  transform: scale(1.1);
+}
+
+.testimonials-swiper .swiper-button-next::after,
+.testimonials-swiper .swiper-button-prev::after {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+/* Swiper Pagination Styling */
+.testimonials-swiper .swiper-pagination {
+  bottom: 0;
+}
+
+.testimonials-swiper .swiper-pagination-bullet {
+  background: var(--light-text);
+  opacity: 0.5;
+  width: 1rem;
+  height: 1rem;
+  margin: 0 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.testimonials-swiper .swiper-pagination-bullet-active {
+  background: var(--primary-color);
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* Emergency visibility rules */
+.testimonials * {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Make sure testimonials section is always visible */
+.testimonials {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.testimonials-swiper {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.testimonial-card {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Legacy grid container (keeping for fallback) */
+.testimonials-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+.testimonial-card {
+  background: var(--white);
+  padding: 3rem 2.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  position: relative;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(74, 124, 89, 0.2);
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  min-height: 250px;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(44, 85, 48, 0.15);
+  border-color: var(--secondary-color);
+}
+
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: -1rem;
+  left: 2rem;
+  font-size: 6rem;
+  color: var(--secondary-color);
+  font-family: Georgia, serif;
+  opacity: 0.3;
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.testimonial-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  font-size: 2rem;
+  font-weight: 600;
+  margin-right: 1.5rem;
+  flex-shrink: 0;
+}
+
+.testimonial-info h4 {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.testimonial-info .location {
+  color: var(--light-text);
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+}
+
+.testimonial-info .location i {
+  color: var(--secondary-color);
+  margin-right: 0.5rem;
+}
+
+.testimonial-text p {
+  color: var(--dark-text);
+  font-size: 1.6rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.rating {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.rating i {
+  color: #FFD700;
+  font-size: 1.4rem;
+}
+
+/* ============================================
+   WHY CHOOSE US SECTION 
+   ============================================ */
+.why-choose-us {
+  padding: 8rem 9% 6rem;
+  background: var(--white);
+  position: relative;
+}
+
+.why-choose-us .section-intro {
+  text-align: center;
+  max-width: 80rem;
+  margin: 0 auto 5rem;
+}
+
+.why-choose-us .section-intro p {
+  font-size: 1.8rem;
+  color: var(--light-text);
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 4rem;
+  margin-top: 4rem;
+}
+
+.feature-card {
+  text-align: center;
+  padding: 3rem 2rem;
+  border-radius: var(--border-radius);
+  transition: all 0.3s ease;
+  background: var(--white);
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--accent-color);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover::before {
+  transform: translateX(0);
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(44, 85, 48, 0.1);
+  border-color: rgba(74, 124, 89, 0.3);
+}
+
+.feature-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 2rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+  background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+  transform: scale(1.1);
+}
+
+.feature-icon i {
+  font-size: 3rem;
+  color: var(--white);
+}
+
+.feature-card h3 {
+  color: var(--primary-color);
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.feature-card p {
+  color: var(--light-text);
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+/* ============================================
+   STATS SECTION 
+   ============================================ */
+.stats-section {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  padding: 6rem 9%;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.stats-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  opacity: 0.3;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 2rem;
+}
+
+.stat-number {
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  display: block;
+  margin-bottom: 1rem;
+  counter-reset: number;
+}
+
+.stat-label {
+  font-size: 1.8rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ============================================
+   NEWSLETTER SECTION 
+   ============================================ */
+.newsletter {
+  background: var(--light-green);
+  padding: 6rem 9%;
+  position: relative;
+}
+
+.newsletter-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  text-align: center;
+  background: var(--white);
+  padding: 4rem 3rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(74, 124, 89, 0.2);
+}
+
+.newsletter h2 {
+  color: var(--primary-color);
+  font-size: 3.2rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.newsletter p {
+  color: var(--light-text);
+  font-size: 1.8rem;
+  margin-bottom: 3rem;
+  line-height: 1.6;
+}
+
+.newsletter-form {
+  display: flex;
+  max-width: 50rem;
+  margin: 0 auto;
+  gap: 1rem;
+  background: #f8f9fa;
+  padding: 0.8rem;
+  border-radius: 50px;
+  border: 2px solid rgba(74, 124, 89, 0.2);
+  transition: all 0.3s ease;
+}
+
+.newsletter-form:focus-within {
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 20px rgba(74, 124, 89, 0.2);
+}
+
+.newsletter-form input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 1.5rem 2rem;
+  font-size: 1.6rem;
+  color: var(--dark-text);
+  outline: none;
+}
+
+.newsletter-form input::placeholder {
+  color: #999;
+}
+
+.newsletter-form .btn {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--white);
+  border: none;
+  padding: 1.5rem 3rem;
+  border-radius: 40px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.newsletter-form .btn:hover {
+  background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(44, 85, 48, 0.3);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN 
+   ============================================ */
+@media (max-width: 991px) {
+  .testimonials-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .features-grid {
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 3rem;
+  }
+  
+  .stats-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+  
+  .newsletter-form {
+    flex-direction: column;
+    border-radius: 15px;
+  }
+  
+  .newsletter-form .btn {
+    border-radius: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials,
+  .why-choose-us,
+  .stats-section,
+  .newsletter {
+    padding: 4rem 5%;
+  }
+  
+  .testimonial-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .feature-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .stats-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .stat-number {
+    font-size: 3.5rem;
+  }
+  
+  .newsletter-container {
+    padding: 3rem 2rem;
+  }
+  
+  .newsletter h2 {
+    font-size: 2.8rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .testimonials .heading,
+  .why-choose-us .heading {
+    font-size: 3rem;
+  }
+  
+  .testimonial-card::before {
+    font-size: 4rem;
+    top: -0.5rem;
+  }
+  
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .feature-icon i {
+    font-size: 2.5rem;
+  }
+  
+  .newsletter h2 {
+    font-size: 2.4rem;
+  }
+}

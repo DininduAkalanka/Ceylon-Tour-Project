@@ -1,0 +1,318 @@
+/* Home Header Swiper Integration Styles */
+
+/* Override any existing home styles for swiper */
+.home {
+    padding: 0 !important;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ensure swiper takes precedence over original styles */
+.home-swiper {
+    position: relative !important;
+    z-index: 10;
+}
+
+.home-swiper {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.home-swiper .swiper-container {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+.home-swiper .swiper-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.home-swiper .swiper-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.8s ease-in-out;
+    z-index: 1;
+}
+
+.home-swiper .swiper-slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+
+.home-swiper .swiper-slide.prev {
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+}
+
+.home-swiper .swiper-slide.next {
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1;
+}
+
+/* Keep existing box styling but make it full container */
+.home-swiper .box {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    justify-content: flex-end;
+    padding: 2rem 9%;
+    position: relative;
+}
+
+/* Background images are set inline in HTML with proper quotes */
+
+/* Add overlay for better text readability */
+.home-swiper .box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(0,0,0,0.3), rgba(0,0,0,0.1));
+    z-index: 1;
+}
+
+/* Ensure content is above overlay */
+.home-swiper .content {
+    width: 50rem;
+    position: relative;
+    z-index: 2;
+    animation: fadeInRight 1s ease-out 0.3s both;
+}
+
+/* Reset content animation for inactive slides */
+.home-swiper .swiper-slide:not(.active) .content {
+    animation: none;
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+.home-swiper .swiper-slide.active .content {
+    opacity: 1;
+    transform: translateX(0);
+    animation: fadeInRight 1s ease-out 0.3s both;
+}
+
+/* Keep existing content styles */
+.home-swiper .content span {
+    font-size: 4rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    display: block;
+}
+
+.home-swiper .content h3 {
+    font-size: 6rem;
+    color: #4CAF50;
+    padding-top: 0.5rem;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.home-swiper .content p {
+    line-height: 2;
+    color: white;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+}
+
+.home-swiper .content .btn {
+    margin-top: 1rem;
+    display: inline-block;
+    border: 0.2rem solid white;
+    color: white;
+    cursor: pointer;
+    background: rgba(255,255,255,0.1);
+    font-size: 1.7rem;
+    padding: 1rem 3rem;
+    border-radius: 40px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    text-shadow: none;
+}
+
+.home-swiper .content .btn:hover {
+    background: white;
+    color: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Navigation Arrows - positioned for home section */
+.home-swiper .swiper-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    color: #333;
+    font-size: 20px;
+}
+
+.home-swiper .swiper-nav:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.home-swiper .swiper-prev {
+    left: 30px;
+}
+
+.home-swiper .swiper-next {
+    right: 30px;
+}
+
+/* Pagination Dots - positioned at bottom */
+.home-swiper .swiper-pagination {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.home-swiper .pagination-dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.home-swiper .pagination-dot.active,
+.home-swiper .pagination-dot:hover {
+    background: white;
+    border-color: white;
+    transform: scale(1.2);
+}
+
+/* Animations */
+@keyframes fadeInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .home-swiper .content {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .home-swiper .content span {
+        font-size: 2.5rem;
+    }
+    
+    .home-swiper .content h3 {
+        font-size: 4rem;
+    }
+    
+    .home-swiper .content p {
+        font-size: 1.3rem;
+    }
+    
+    .home-swiper .swiper-nav {
+        width: 50px;
+        height: 50px;
+        font-size: 16px;
+    }
+    
+    .home-swiper .swiper-prev {
+        left: 15px;
+    }
+    
+    .home-swiper .swiper-next {
+        right: 15px;
+    }
+    
+    .home-swiper .pagination-dot {
+        width: 12px;
+        height: 12px;
+    }
+    
+    .home-swiper .box {
+        justify-content: center;
+        padding: 2rem 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-swiper .content span {
+        font-size: 2rem;
+    }
+    
+    .home-swiper .content h3 {
+        font-size: 3rem;
+    }
+    
+    .home-swiper .content p {
+        font-size: 1.2rem;
+    }
+    
+    .home-swiper .content .btn {
+        font-size: 1.5rem;
+        padding: 0.8rem 2rem;
+    }
+}
+
+/* Touch feedback */
+.home-swiper .swiper-slide.touching {
+    transition: transform 0.1s ease-out;
+}
+
+/* Loading state for images */
+.home-swiper .box.loading {
+    background-image: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%) !important;
+    background-size: 200% 100% !important;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
