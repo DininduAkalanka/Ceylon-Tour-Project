@@ -669,17 +669,5 @@ Use GitHub Issues with the bug template:
 - Contributors and testers
 ---
 
-<div align="center">
 
-### ⭐ Star this repository if you find it helpful!
-
-**Made with ❤️ in Sri Lanka 🇱🇰**
-
-[![GitHub stars](https://img.shields.io/github/stars/DininduAkalanka/Ceylon-Tour-Project?style=social)](https://github.com/DininduAkalanka/Ceylon-Tour-Project/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/DininduAkalanka/Ceylon-Tour-Project?style=social)](https://github.com/DininduAkalanka/Ceylon-Tour-Project/network)
-[![GitHub watchers](https://img.shields.io/github/watchers/DininduAkalanka/Ceylon-Tour-Project?style=social)](https://github.com/DininduAkalanka/Ceylon-Tour-Project/watchers)
-
-[Back to Top ↑](#-ceylon-tourcom---sri-lanka-travel-experience-platform)
-
-</div>
 
