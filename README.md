@@ -4,7 +4,6 @@
 
 [![PHP Version](https://img.shields.io/badge/PHP-7.4%2B-blue.svg)](https://php.net)
 [![MySQL](https://img.shields.io/badge/MySQL-5.7%2B-orange.svg)](https://www.mysql.com/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 **A comprehensive tourism management web application for Sri Lankan tour packages, bookings, and customer engagement.**
@@ -670,6 +669,7 @@ Use GitHub Issues with the bug template:
 ### Special Thanks
 - Contributors and testers
 ---
+
 
 
 
