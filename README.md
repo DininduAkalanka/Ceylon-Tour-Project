@@ -476,99 +476,6 @@ ial media, and contact information*
 
 ---
 
-## 🔌 API Endpoints
-
-### Base URL
-```
-http://yourdomain.com/backend/api/
-```
-
-###  Contact Form Submission
-```http
-POST /backend/api/contact-process.php
-Content-Type: application/json
-```
-
-**Request Body:**
-```json
-{
-  "name": "John Doe",
-  "email": "john@example.com",
-  "phone": "+94771234567",
-  "subject": "Tour Inquiry",
-  "message": "I'm interested in the 5-day tour package."
-}
-```
-
-**Response:**
-```json
-{
-  "success": true,
-  "message": "Thank you! Your message has been sent successfully."
-}
-```
-
-###  Booking Submission
-```http
-POST /backend/api/process_booking.php
-Content-Type: application/x-www-form-urlencoded
-```
-
-**Request Parameters:**
-- `fullName` (string, required)
-- `email` (string, required, valid email)
-- `phone` (string, optional)
-- `packageSelect` (string, required)
-- `travelDate` (date, required, YYYY-MM-DD)
-- `numTravelers` (integer, required, 1-20)
-- `message` (text, optional)
-
-**Response:**
-```json
-{
-  "success": true,
-  "message": "Booking confirmed! Check your email for details.",
-  "bookingId": 12345
-}
-```
-
-###  Feedback Submission
-```http
-POST /backend/api/process_feedback.php
-```
-
-**Request Parameters:**
-- `fullName` (string, required)
-- `email` (string, required)
-- `phone` (string, optional)
-- `tourPackage` (string, required)
-- `rating` (integer, 1-5, required)
-- `service_rating` (integer, 1-5, optional)
-- `feedback` (text, required)
-
-**Response:**
-```json
-{
-  "success": true,
-  "message": "Thank you for your feedback!"
-}
-```
-
-### 📱 WhatsApp Notification
-```http
-POST /backend/api/whatsapp_notification.php
-Content-Type: application/json
-```
-
-**Request Body:**
-```json
-{
-  "message": "WhatsApp button clicked",
-  "timestamp": "2025-11-09 14:30:00"
-}
-```
-
----
 
 ## 🔐 Security
 
@@ -669,6 +576,7 @@ Use GitHub Issues with the bug template:
 ### Special Thanks
 - Contributors and testers
 ---
+
 
 
 
