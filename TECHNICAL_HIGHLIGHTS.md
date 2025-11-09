@@ -488,8 +488,8 @@ SMTP_PORT=587
 
 - 🌐 **Live Demo:** [ceylontour.infinityfreeapp.com](https://ceylontour.infinityfreeapp.com/)
 - 💻 **GitHub:** [github.com/DininduAkalanka/Ceylon-Tour-Project](https://github.com/DininduAkalanka/Ceylon-Tour-Project)
-- 💼 **LinkedIn:** [Your LinkedIn Profile]
-- 📧 **Email:** [Your Email]
+- 💼 **LinkedIn:** https://www.linkedin.com/in/dinindu-akalanka-990610270/
+- 📧 **Email:** akalankada2018@gmail.com
 
 ---
 
