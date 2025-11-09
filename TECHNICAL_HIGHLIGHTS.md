@@ -318,37 +318,50 @@ Tour-Project/
 ### Normalized Schema (3NF)
 ```sql
 -- Bookings Table
-CREATE TABLE bookings (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL,
-    phone VARCHAR(20) NOT NULL,
-    package_id INT NOT NULL,
-    travel_date DATE NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (package_id) REFERENCES packages(id)
-);
+CREATE TABLE `bookings` (
+  `id` int NOT NULL,
+  `full_name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `package_name` varchar(100) NOT NULL,
+  `travel_date` date NOT NULL,
+  `num_travelers` int NOT NULL DEFAULT '1',
+  `message` text,
+  `booking_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `status` enum('pending','confirmed','cancelled') DEFAULT 'pending'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Contact Submissions
-CREATE TABLE contact_submissions (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL,
-    subject VARCHAR(200) NOT NULL,
-    message TEXT NOT NULL,
-    status ENUM('pending', 'replied', 'closed') DEFAULT 'pending',
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+CREATE TABLE `contact_messages` (
+  `id` int NOT NULL,
+  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `subject` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` enum('new','read','replied') COLLATE utf8mb4_unicode_ci DEFAULT 'new',
+  `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `ip_address` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `user_agent` text COLLATE utf8mb4_unicode_ci
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Customer Feedback
-CREATE TABLE customer_feedback (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    booking_id INT,
-    rating INT CHECK (rating BETWEEN 1 AND 5),
-    feedback_text TEXT,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (booking_id) REFERENCES bookings(id)
-);
+CREATE TABLE `customer_feedback` (
+  `id` int UNSIGNED NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `phone` varchar(20) DEFAULT NULL,
+  `tour_package` varchar(100) NOT NULL,
+  `travel_date` date NOT NULL,
+  `rating` int DEFAULT '0',
+  `service_rating` int DEFAULT '0',
+  `value_rating` int DEFAULT '0',
+  `positive_feedback` text,
+  `improvement_feedback` text,
+  `share_permission` tinyint(1) DEFAULT '0',
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 ```
 
 **Database Features:**
