@@ -1,7 +1,7 @@
 # 🚀 CeylonTour.com - Technical Highlights
 
 ## 📋 Project Overview
-**CeylonTour.com** is a production-grade tourism management platform built from scratch using vanilla JavaScript, PHP, and MySQL. This project demonstrates enterprise-level web development practices with zero framework dependencies for the frontend search engine.
+Ceylon Tour.com is a full-stack web application designed to showcase Sri Lankan tourism packages, handle bookings, manage customer inquiries, and collect feedback. The platform features a modern, responsive design with enhanced user experience, SEO optimization, and secure backend processing.
 
 **Live Demo:** [ceylontour.infinityfreeapp.com](https://ceylontour.infinityfreeapp.com/)  
 **GitHub Repository:** [Ceylon-Tour-Project](https://github.com/DininduAkalanka/Ceylon-Tour-Project)
