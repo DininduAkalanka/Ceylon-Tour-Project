@@ -43,6 +43,8 @@
 
 **Ceylon Tour.com** is a full-stack web application designed to showcase Sri Lankan tourism packages, handle bookings, manage customer inquiries, and collect feedback. The platform features a modern, responsive design with enhanced user experience, SEO optimization, and secure backend processing.
 
+- **Live Demo**: https://ceylontour.infinityfreeapp.com/
+
 ### 🎨 Design Philosophy
 
 - **User-Centric Design**: Intuitive navigation and mobile-responsive interface
@@ -647,7 +649,7 @@ Use GitHub Issues with the bug template:
 
 ### Project Links
 - **Repository**: [https://github.com/DininduAkalanka/Ceylon-Tour-Project](https://github.com/DininduAkalanka/Ceylon-Tour-Project)
-- **Live Demo**: [Coming Soon]
+- **Live Demo**: https://ceylontour.infinityfreeapp.com/
 - **Issues**: [GitHub Issues](https://github.com/DininduAkalanka/Ceylon-Tour-Project/issues)
 
 
@@ -668,6 +670,7 @@ Use GitHub Issues with the bug template:
 ### Special Thanks
 - Contributors and testers
 ---
+
 
 
 
